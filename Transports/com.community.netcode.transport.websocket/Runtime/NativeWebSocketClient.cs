@@ -55,7 +55,7 @@ namespace Netcode.Transports.WebSocket
             {
                 if(!Connection.Connect())
                 {
-                    throw InvalidOperationException($"Cannot connect to url {Connection.Url}");
+                    throw new InvalidOperationException($"Cannot connect to url {Connection.Url}");
                 }
             }
             catch (Exception e)
