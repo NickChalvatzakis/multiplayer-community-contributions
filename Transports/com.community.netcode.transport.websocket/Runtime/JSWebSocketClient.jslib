@@ -10,7 +10,7 @@ var LibraryWebSocket = {
   },
 
   _SetUrl: function (urlPointer) {
-    state.url = Pointer_stringify(urlPointer);
+    state.url = UTF8ToString(urlPointer);
   },
 
   _SetOnOpen: function (callback) {
@@ -101,7 +101,7 @@ var LibraryWebSocket = {
     if (state.ws.readyState === 2) return -4;
     if (state.ws.readyState === 3) return -5;
 
-    var reason = (reasonPointer ? Pointer_stringify(reasonPointer) : undefined);
+    var reason = (reasonPointer ? UTF8ToString(reasonPointer) : undefined);
 
     try {
       state.ws.close(code, reason);
